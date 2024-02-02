@@ -1,3 +1,4 @@
+import { Key } from "ts-toolbelt/out/Any/Key";
 import { Equal, Expect } from "../helpers/type-utils";
 
 const testingFrameworks = {
@@ -12,6 +13,6 @@ const testingFrameworks = {
   },
 };
 
-type TestingFramework = unknown;
+type TestingFramework = keyof typeof testingFrameworks;
 
 type tests = [Expect<Equal<TestingFramework, "vitest" | "jest" | "mocha">>];
